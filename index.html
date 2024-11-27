@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamePlus+</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!--Parte inicial com a prompt de pesquisa-->
+        <div class="search-container">
+            <form id="searchForm">
+                <input type="text" id="search-bar" placeholder="Digite sua pesquisa..." required>
+                <button type="submit">Pesquisar</button>
+                <a href="login.html"><button type="button" class="login-btn">Login</button></a>
+
+            </form>
+            <div id="result">
+            </div>
+        </div>
+    
+
+    <!--Menu-->
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">GamePlus+</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produto.html">Catalogo</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <h3 class="destaques">Destaques</h3>
+    <!--Destaques-->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="./imagens/cyberpunk2077.png" alt="Item 1">
+            </div>
+            <div class="carousel-item">
+                <img src="./imagens/eldenring.png" alt="Item 2">
+            </div>
+            <div class="carousel-item">
+                <img src="./imagens/hollowknight.png" alt="Item 3">
+            </div>
+            <div class="carousel-item">
+                <img src="./imagens/tekken8.png" alt="Item 4">
+            </div>
+            <div class="carousel-item">
+                <img src="./imagens/nierautomata.png" alt="Item 5">
+            </div>
+        </div>
+    </div>
+
+   
+
+
+<!-- Estrutura do Modal -->
+<div id="meuModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <h2 id="produtoNome">Nome do Produto</h2>
+        <p id="produtoDescricao">Descrição do produto aqui.</p>
+        <img id="produtoImagem" src="" alt="Imagem do Produto">
+    </div>
+</div>
+
+    <!--Footer-->
+
+    <footer>
+        <p>&copy; 2024 Francisco Jedison. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./javascript/script.js"></script>
+</body>
+</html>
