@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `nome` varchar(50) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `telefone` varchar(15) NOT NULL
@@ -39,7 +39,7 @@ CREATE TABLE `users` (
 -- Despejando dados para a tabela `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `senha`, `email`, `telefone`) VALUES
+INSERT INTO `users` (`id`, `nome`, `senha`, `email`, `telefone`) VALUES
 (1, 'Francisco', '8124', 'franciscojedison@gmail.com', '61982499435'),
 (3, '1234', '123', 'franciscojedison@gmail.com', '61982499435'),
 (5, '12345', '123', 'franciscojedison@gmail.com', '61982499435');
@@ -53,7 +53,7 @@ INSERT INTO `users` (`id`, `username`, `senha`, `email`, `telefone`) VALUES
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `nome` (`nome`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas

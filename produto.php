@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Verificar se o usuário está logado
+if (!isset($_SESSION['user_id'])) {
+    // Se não estiver logado, redirecionar para o login
+    header("Location: login.php");
+    exit();
+}
+?>
+ <h2>Bem-vindo, <?php echo $_SESSION['nome']; ?>!</h2>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,8 +38,8 @@
     <nav class="navbar">
         <div class="logo">GamePlus+</div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="produto.html">Catalogo</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="produto.php">Catalogo</a></li>
             <li><a href="about.html">Sobre</a></li>
             <li><a href="contact.html">Contato</a></li>
         </ul>

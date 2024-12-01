@@ -354,3 +354,35 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   $("#telefone, #celular").mask("(00) 0000-0000");
+
+
+  let cart = [];
+
+function addToCart(id, name, price, description) {
+    const quantity = document.querySelector(`.product[data-id="${id}"] input`).value;
+    const product = { id, name, price, description, quantity: parseInt(quantity) };
+    const existingProductIndex = cart.findIndex(item => item.id === id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].quantity += product.quantity;
+    } else {
+        cart.push(product);
+    }
+
+    alert(`${name} adicionado ao carrinho.`);
+}
+
+function finalizePurchase() {
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'checkout.php';
+
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'cart';
+    input.value = JSON.stringify(cart);
+
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+}
