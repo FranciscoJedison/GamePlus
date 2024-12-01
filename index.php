@@ -8,8 +8,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 ?>
-
-    <h2>Bem-vindo, <?php echo $_SESSION['nome']; ?>!</h2>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +15,23 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamePlus+</title>
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+    .search-container h3{
+        color: white;
+        padding: 2px;
+    }
+    </style>
 </head>
 <body>
+
     <!--Parte inicial com a prompt de pesquisa-->
         <div class="search-container">
             <form id="searchForm">
                 <input type="text" id="search-bar" placeholder="Digite sua pesquisa..." required>
                 <button type="submit">Pesquisar</button>
                 <a href="login.php"><button type="button" class="login-btn">Login</button></a>
-                <a href="logout.php"><button type="button" class="logout-btn">Logout</button></a>
+                <h3 class="msg-lgn">Bem-vindo, <?php echo $_SESSION['nome']; ?>! </h3>
+                <a href="logout.php"><button type="button" class="logout-btn">Sair</button></a>
 
 
             </form>
@@ -33,7 +39,6 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     
-
     <!--Menu-->
 
     <header>
@@ -76,18 +81,6 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
    
-
-
-<!-- Estrutura do Modal -->
-<div id="meuModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="fecharModal()">&times;</span>
-        <h2 id="produtoNome">Nome do Produto</h2>
-        <p id="produtoDescricao">Descrição do produto aqui.</p>
-        <img id="produtoImagem" src="" alt="Imagem do Produto">
-    </div>
-</div>
-
     <!--Footer-->
 
     <footer>

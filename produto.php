@@ -8,7 +8,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 ?>
- <h2>Bem-vindo, <?php echo $_SESSION['nome']; ?>!</h2>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,20 +16,27 @@ if (!isset($_SESSION['user_id'])) {
 <title>Catálogo de Produtos</title>
 <link rel="stylesheet" href="./css/style.css">
 <script src="./javascript/script.js" defer></script>
+<style>
+    .search-container h3{
+        color: white;
+        padding: 2px;
+    }
+    </style>
 </head>
 <body>
-
      <!--Parte inicial com a prompt de pesquisa-->
      <div class="search-container">
         <form id="searchForm">
             <input type="text" id="search-bar" placeholder="Digite sua pesquisa..." required>
             <button type="submit">Pesquisar</button>
-            <a href="login.html"><button type="button" class="login-btn">Login</button></a>
+            <a href="login.php"><button type="button" class="login-btn">Login</button></a>
+            <h3 class="msg-lgn">Bem-vindo, <?php echo $_SESSION['nome']; ?>! </h3>
+            <a href="logout.php"><button type="button" class="logout-btn">Sair</button></a>
+
         </form>
         <div id="result">
         </div>
     </div>
-
 
 <!--Menu-->
 
@@ -208,7 +214,7 @@ if (!isset($_SESSION['user_id'])) {
     <h2>Carrinho</h2>
     <ul id="cart-items"></ul>
     <p>Total: R$ <span id="cart-total">0.00</span></p>
-    <a href="#finalizarcompra.html"><button>Finalizar Compra</button></a>
+    <a href="#finalizarcompra.php"><button>Finalizar Compra</button></a>
   </div>
 
 
